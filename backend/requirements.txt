@@ -1,0 +1,18 @@
+# Core FastAPI dependencies
+fastapi
+uvicorn[standard]
+
+# AI and Vector Database
+lightrag
+
+# Database and async support
+aiosqlite
+
+# File upload support
+python-multipart
+
+# HTTP client for API calls
+httpx
+
+# Additional utilities
+python-dateutily
