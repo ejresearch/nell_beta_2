@@ -1,177 +1,205 @@
-// src/types/index.ts
+// =============================================================================
+// TYPES FILE - FIXED TO EXPORT BUCKET AND ALL NEEDED TYPES
+// =============================================================================
 
-// Base API Response
-export interface ApiResponse<T = any> {
-  data: T;
-  message?: string;
-  status: 'success' | 'error';
+// USER & SETTINGS
+export interface UserSettings {
+  apiUrl: string;
+  openaiApiKey: string;
+  defaultModel: string;
+  theme: 'light' | 'dark';
+  autoSave?: boolean;
+  notifications?: boolean;
 }
 
-// Project Types
+// PROJECT
 export interface Project {
   id: string;
   name: string;
-  description: string;
-  type: 'creative_writing' | 'business_docs' | 'research' | 'custom';
-  created_at: string;
-  updated_at: string;
-  metadata: ProjectMetadata;
-}
-
-export interface ProjectMetadata {
-  author?: string;
-  genre?: string;
-  target_length?: number;
-  custom_fields?: Record<string, any>;
+  description?: string;
+  status: 'active' | 'archived' | 'draft';
+  createdAt: Date;
+  updatedAt: Date;
+  dbPath: string;
+  lightragPath: string;
+  tables: string[];
+  bucketCount: number;
 }
 
 export interface CreateProjectRequest {
   name: string;
-  description: string;
-  type: Project['type'];
-  metadata?: Partial<ProjectMetadata>;
+  description?: string;
+  tables: Array<Record<string, string[]>>;
 }
 
-// Bucket Types
+// BUCKET - THE MISSING EXPORT!
 export interface Bucket {
   id: string;
   name: string;
-  active: boolean;
-  doc_count: number;
-  ingestion_status: 'idle' | 'processing' | 'complete' | 'error';
+  status: 'active' | 'inactive' | 'ingesting' | 'error';
   guidance?: string;
-  created_at: string;
-  updated_at: string;
-}
-
-export interface BucketFile {
-  id: string;
-  bucket_id: string;
-  filename: string;
-  file_size: number;
-  upload_status: 'uploading' | 'complete' | 'error';
-  uploaded_at: string;
+  description?: string;
+  docCount: number;
+  lastUpdated: Date;
+  active: boolean;
 }
 
 export interface CreateBucketRequest {
   name: string;
   guidance?: string;
+  description?: string;
 }
 
-export interface UploadFileRequest {
-  bucket_id: string;
-  file: File;
+// TABLE
+export interface TableSchema {
+  tableName: string;
+  columns: string[];
+  rowCount: number;
 }
 
-// Prompt Types
+export interface TableRow {
+  rowId?: number;
+  data: Record<string, any>;
+}
+
+export interface ProjectTable {
+  id: string;
+  name: string;
+  columns: string[];
+  rowCount: number;
+}
+
+// PROMPTS
 export interface PromptTemplate {
   id: string;
   name: string;
-  description: string;
-  tone: string;
-  style: string;
-  task_goal: string;
-  easter_egg?: string;
-  is_global: boolean;
-  project_id?: string;
-  created_at: string;
-  updated_at: string;
+  content: string;
+  projectId?: string;
+  createdAt: Date;
 }
 
 export interface CreatePromptRequest {
   name: string;
-  description: string;
-  tone: string;
-  style: string;
-  task_goal: string;
-  easter_egg?: string;
-  is_global?: boolean;
-  project_id?: string;
+  content: string;
+  projectId?: string;
 }
 
-// Table Types
-export interface ProjectTable {
-  id: string;
-  project_id: string;
-  name: string;
-  columns: TableColumn[];
-  row_count: number;
-  created_at: string;
-  updated_at: string;
-}
-
-export interface TableColumn {
-  name: string;
-  type: 'text' | 'number' | 'date' | 'boolean';
-  required: boolean;
-}
-
-export interface TableRow {
-  id: string;
-  table_id: string;
-  data: Record<string, any>;
-  created_at: string;
-  updated_at: string;
-}
-
-// Generation Types
-export interface BrainstormRequest {
-  project_id: string;
-  source_table_id: string;
-  source_row_id?: string;
-  active_buckets: string[];
-  prompt_template_id: string;
-  easter_egg?: string;
-}
-
-export interface WriteRequest {
-  project_id: string;
-  brainstorm_id?: string;
-  source_table_id: string;
-  source_row_id?: string;
-  prompt_template_id: string;
-  custom_context?: string;
-}
-
+// OUTPUTS
 export interface GenerationOutput {
   id: string;
-  project_id: string;
-  type: 'brainstorm' | 'write' | 'chat';
+  type: 'brainstorm' | 'write' | 'edit';
   content: string;
-  metadata: GenerationMetadata;
+  projectId: string;
+  createdAt: Date;
+}
+
+export interface BrainstormOutput {
+  id: string;
+  projectId: string;
   version: number;
-  created_at: string;
+  sourceTable: string;
+  sourceRows: number[];
+  bucketsUsed: string[];
+  tone: string;
+  easterEgg?: string;
+  promptUsed: string;
+  content: string;
+  createdAt: Date;
 }
 
-export interface GenerationMetadata {
-  prompt_used: string;
-  buckets_used: string[];
-  source_context: Record<string, any>;
-  model_used: string;
-  generation_time_ms: number;
+export interface WriteOutput {
+  id: string;
+  projectId: string;
+  version: number;
+  brainstormVersion?: number;
+  sourceTable: string;
+  sourceRows: number[];
+  tone: string;
+  instructions?: string;
+  content: string;
+  wordCount: number;
+  createdAt: Date;
 }
 
-// User Settings Types
-export interface UserSettings {
-  openai_api_key?: string;
-  default_model: string;
-  theme: 'light' | 'dark';
-  auto_save: boolean;
-  default_prompt_id?: string;
-}
-
-// API Error Types
-export interface ApiError {
-  message: string;
-  code: string;
-  details?: any;
-}
-
-// Upload Progress Types
+// UPLOAD
 export interface UploadProgress {
   file_id: string;
   filename: string;
-  progress: number; // 0-100
-  status: 'uploading' | 'processing' | 'complete' | 'error';
-  error_message?: string;
+  progress: number;
+  status: 'uploading' | 'complete' | 'error';
+}
+
+export interface UploadFileRequest {
+  bucketId: string;
+  file: File;
+}
+
+// NOTIFICATIONS
+export interface Notification {
+  id: string;
+  type: 'info' | 'success' | 'warning' | 'error';
+  title: string;
+  message: string;
+  timestamp: Date;
+  read: boolean;
+}
+
+// APP STATE
+export interface AppState {
+  isOnline: boolean;
+  mirandaVisible: boolean;
+  sidebarCollapsed: boolean;
+  notifications: Notification[];
+}
+
+// API
+export interface ApiResponse<T = any> {
+  success: boolean;
+  message: string;
+  data?: T;
+}
+
+export interface ApiErrorResponse {
+  success: false;
+  error: string;
+  details?: Record<string, any>;
+}
+
+// TONE
+export type TonePreset = 
+  | 'neutral' 
+  | 'cheesy-romcom' 
+  | 'romantic-dramedy' 
+  | 'shakespearean-romance' 
+  | 'professional' 
+  | 'academic' 
+  | 'creative';
+
+// REQUESTS
+export interface BrainstormRequest {
+  projectId: string;
+  sourceTable: string;
+  selectedRows: number[];
+  selectedBuckets: string[];
+  tone: TonePreset;
+  easterEgg?: string;
+  customPrompt?: string;
+}
+
+export interface WriteRequest {
+  projectId: string;
+  brainstormVersion?: number;
+  sourceTable: string;
+  selectedRows: number[];
+  tone: TonePreset;
+  customInstructions?: string;
+}
+
+// UTILITY
+export type Status = 'idle' | 'loading' | 'success' | 'error';
+
+export interface AsyncState<T> {
+  data: T | null;
+  status: Status;
+  error: string | null;
 }

@@ -1,7 +1,6 @@
 // src/utils/errors.ts
 
-import { ApiError } from '../types';
-
+// Define ApiError here; no import from '../types'
 export class ApiError extends Error {
   public code: string;
   public details?: any;
@@ -18,15 +17,15 @@ export function getErrorMessage(error: unknown): string {
   if (error instanceof ApiError) {
     return error.message;
   }
-  
+
   if (error instanceof Error) {
     return error.message;
   }
-  
+
   if (typeof error === 'string') {
     return error;
   }
-  
+
   return 'An unexpected error occurred';
 }
 
@@ -46,12 +45,13 @@ export function isServerError(error: unknown): boolean {
 export function handleApiError(error: unknown, context: string = ''): void {
   const message = getErrorMessage(error);
   const contextMessage = context ? `${context}: ${message}` : message;
-  
+
   console.error('API Error:', error);
-  
+
   // TODO: Integrate with toast notification system
   // toast.error(contextMessage);
-  
+
   // For now, just log to console
   console.error(contextMessage);
 }
+
