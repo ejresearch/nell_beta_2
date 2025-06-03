@@ -2,9 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
 
-# Import API routes
-from api.endpoints import api_router
-
 # Create FastAPI app
 app = FastAPI(
     title="Nell Beta 2",
@@ -21,25 +18,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include API routes
-app.include_router(api_router)
-
 @app.get("/")
 def root():
     return {
-        "message": "Nell Beta 2 Backend",
-        "status": "running", 
+        "message": "Nell Beta 2 Backend", 
+        "status": "running",
         "version": "1.0.0"
     }
 
 @app.get("/health")
-def health():
-    return {"status": "healthy"}
+def health_check():
+    return {"status": "healthy", "service": "nell-beta-2"}
 
-@app.get("/projects")
-def list_projects():
-    # Your existing projects code...
-    return {"projects": projects}
+# Include API routers
+from api.projects import router as projects_router
+from api.buckets import router as buckets_router
+
+app.include_router(projects_router)
+app.include_router(buckets_router)
 
 if __name__ == "__main__":
     import uvicorn

@@ -1,0 +1,10 @@
+{
+  "name": "creative_sources",
+  "project_id": "my_first_project",
+  "active": true,
+  "guidance": "Focus on character development",
+  "created_at": "2025-06-02T21:35:38.941789",
+  "last_updated": "2025-06-02T21:36:57.996822",
+  "document_count": 1,
+  "lightrag_status": "failed: Failed to create LightRAG instance: All LightRAG initialization approaches failed: cannot import name 'gpt_4o_mini_complete' from 'lightrag.llm' (/Users/elle/nell_beta1/nell_beta_2/backend/venv/lib/python3.12/site-packages/lightrag/llm/__init__.py), Expected a callable object, got <class 'NoneType'>, Expected a callable object, got <class 'NoneType'>"
+}

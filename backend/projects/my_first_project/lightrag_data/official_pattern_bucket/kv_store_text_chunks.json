@@ -1,0 +1,9 @@
+{
+  "chunk-57b78d087d0843add1a690cb98e9cb60": {
+    "tokens": 15,
+    "content": "This should work with the official LightRAG functions and proper async handling.",
+    "chunk_order_index": 0,
+    "full_doc_id": "doc-57b78d087d0843add1a690cb98e9cb60",
+    "file_path": "unknown_source"
+  }
+}

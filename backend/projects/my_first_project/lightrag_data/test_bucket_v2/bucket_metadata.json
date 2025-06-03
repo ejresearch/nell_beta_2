@@ -1,0 +1,10 @@
+{
+  "name": "test_bucket_v2",
+  "project_id": "my_first_project",
+  "active": true,
+  "guidance": "Focus on storytelling",
+  "created_at": "2025-06-02T22:08:24.896207",
+  "last_updated": "2025-06-02T22:09:24.018048",
+  "document_count": 1,
+  "lightrag_status": "failed: Failed to create LightRAG instance: 'function' object has no attribute 'embedding_dim'"
+}

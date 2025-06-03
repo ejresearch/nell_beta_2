@@ -1,0 +1,10 @@
+{
+  "name": "working_bucket",
+  "project_id": "my_first_project",
+  "active": true,
+  "guidance": "Character development guide",
+  "created_at": "2025-06-02T22:13:00.322408",
+  "last_updated": "2025-06-02T22:13:21.087828",
+  "document_count": 1,
+  "lightrag_status": "initialized"
+}

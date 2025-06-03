@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d11" for="edge" attr.name="created_at" attr.type="long" />
+  <key id="d10" for="edge" attr.name="file_path" attr.type="string" />
+  <key id="d9" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d8" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d7" for="edge" attr.name="description" attr.type="string" />
+  <key id="d6" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d5" for="node" attr.name="created_at" attr.type="long" />
+  <key id="d4" for="node" attr.name="file_path" attr.type="string" />
+  <key id="d3" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="description" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_id" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="Master Writers">
+      <data key="d0">Master Writers</data>
+      <data key="d1">category</data>
+      <data key="d2">Master writers are a category of skilled authors who create compelling narratives using various techniques and principles.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Show Don't Tell">
+      <data key="d0">Show Don't Tell</data>
+      <data key="d1">category</data>
+      <data key="d2">Show Don't Tell is a writing principle that encourages writers to illustrate scenes and emotions through action and dialogue rather than through exposition.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Compelling Characters">
+      <data key="d0">Compelling Characters</data>
+      <data key="d1">category</data>
+      <data key="d2">Compelling Characters are characterized by clear motivations and flaws that engage readers and enhance storytelling.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Active Voice">
+      <data key="d0">Active Voice</data>
+      <data key="d1">category</data>
+      <data key="d2">Active Voice is a writing technique that emphasizes clarity and energy in prose by structuring sentences with the subject performing the action.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Specific Details">
+      <data key="d0">Specific Details</data>
+      <data key="d1">category</data>
+      <data key="d2">Specific Details refer to precise, concrete descriptions that help create vivid imagery and clarity in writing.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Ruthless Editing">
+      <data key="d0">Ruthless Editing</data>
+      <data key="d1">category</data>
+      <data key="d2">Ruthless Editing is a principle that advocates for extensive revision and removal of unnecessary words to improve narrative quality.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Reading Aloud">
+      <data key="d0">Reading Aloud</data>
+      <data key="d1">category</data>
+      <data key="d2">Reading Aloud is a practice employed by writers to catch rhythm issues and enhance the flow of their writing.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Starting Scenes Late">
+      <data key="d0">Starting Scenes Late</data>
+      <data key="d1">category</data>
+      <data key="d2">Starting Scenes Late is a storytelling principle that encourages writers to begin scenes at pivotal moments to create immediacy and impact.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Conflict in Narrative">
+      <data key="d0">Conflict in Narrative</data>
+      <data key="d1">category</data>
+      <data key="d2">Conflict in Narrative is a crucial component that drives plots forward and engages readers by creating tension and stakes.</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Concrete Details">
+      <data key="d0">Concrete Details</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d2">The principle of using specific, concrete details is important for master writers to avoid vagueness in their writing.</data>
+      <data key="d1">UNKNOWN</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Edit Ruthlessly">
+      <data key="d0">Edit Ruthlessly</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d2">Master writers adhere to the principle of editing ruthlessly to enhance the effectiveness of their writing.</data>
+      <data key="d1">UNKNOWN</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Read Aloud">
+      <data key="d0">Read Aloud</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d2">Master writers read their work aloud to identify rhythm issues, improving the flow of their writing.</data>
+      <data key="d1">UNKNOWN</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Start Scenes Late">
+      <data key="d0">Start Scenes Late</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d2">A principle for master writers is to start scenes as late as possible to create more impactful narratives.</data>
+      <data key="d1">UNKNOWN</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <node id="Use Conflict">
+      <data key="d0">Use Conflict</data>
+      <data key="d3">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d2">Conflict is a crucial element for master writers to drive their narratives forward.</data>
+      <data key="d1">UNKNOWN</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922359</data>
+    </node>
+    <edge source="Master Writers" target="Show Don't Tell">
+      <data key="d6">8.0</data>
+      <data key="d7">One of the principles that master writers follow is to show rather than tell, emphasizing the use of vivid scenes and dialogue.</data>
+      <data key="d8">narrative technique,writing principle</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Compelling Characters">
+      <data key="d6">8.0</data>
+      <data key="d7">Master writers focus on creating compelling characters as part of their narrative strategy.</data>
+      <data key="d8">character development,storytelling</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Active Voice">
+      <data key="d6">8.0</data>
+      <data key="d7">Using an active voice is a guiding principle for master writers to maintain energy in their writing.</data>
+      <data key="d8">engagement,writing technique</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Concrete Details">
+      <data key="d6">8.0</data>
+      <data key="d7">The principle of using specific, concrete details is important for master writers to avoid vagueness in their writing.</data>
+      <data key="d8">clarity,writing quality</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Edit Ruthlessly">
+      <data key="d6">8.0</data>
+      <data key="d7">Master writers adhere to the principle of editing ruthlessly to enhance the effectiveness of their writing.</data>
+      <data key="d8">editing method,precision</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Read Aloud">
+      <data key="d6">8.0</data>
+      <data key="d7">Master writers read their work aloud to identify rhythm issues, improving the flow of their writing.</data>
+      <data key="d8">editing technique,rhythm</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Start Scenes Late">
+      <data key="d6">8.0</data>
+      <data key="d7">A principle for master writers is to start scenes as late as possible to create more impactful narratives.</data>
+      <data key="d8">narrative technique,pacing</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Use Conflict">
+      <data key="d6">9.0</data>
+      <data key="d7">Conflict is a crucial element for master writers to drive their narratives forward.</data>
+      <data key="d8">narrative drive,storytelling element</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Specific Details">
+      <data key="d6">8.0</data>
+      <data key="d7">Master writers emphasize Specific Details to enhance imagery and ensure their descriptions are vivid and relatable.</data>
+      <data key="d8">descriptive writing,imagery</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Ruthless Editing">
+      <data key="d6">9.0</data>
+      <data key="d7">Ruthless Editing is practiced by master writers to increase the effectiveness and precision of their work.</data>
+      <data key="d8">editing process,narrative quality</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Reading Aloud">
+      <data key="d6">7.0</data>
+      <data key="d7">Reading Aloud is a technique that master writers apply to identify and rectify rhythmic issues in their writing.</data>
+      <data key="d8">editing technique,writing flow</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Starting Scenes Late">
+      <data key="d6">8.0</data>
+      <data key="d7">Starting Scenes Late is a principle in writing that master writers employ to maintain narrative tension and pacing.</data>
+      <data key="d8">pacing,storytelling technique</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+    <edge source="Master Writers" target="Conflict in Narrative">
+      <data key="d6">9.0</data>
+      <data key="d7">Master writers incorporate Conflict in Narrative to engage readers and drive their storytelling forward.</data>
+      <data key="d8">engagement,narrative element</data>
+      <data key="d9">chunk-be12766422c8b2ba22525f6d4a6ea8b6</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922359</data>
+    </edge>
+  </graph>
+</graphml>

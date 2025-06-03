@@ -1,0 +1,10 @@
+{
+  "name": "official_pattern_bucket",
+  "project_id": "my_first_project",
+  "active": true,
+  "guidance": "Testing official pattern",
+  "created_at": "2025-06-02T22:40:36.443063",
+  "last_updated": "2025-06-02T22:42:12.640501",
+  "document_count": 2,
+  "lightrag_status": "initialized"
+}

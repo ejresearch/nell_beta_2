@@ -1,0 +1,22 @@
+{
+  "doc-57b78d087d0843add1a690cb98e9cb60": {
+    "status": "processed",
+    "chunks_count": 1,
+    "content": "This should work with the official LightRAG functions and proper async handling.",
+    "content_summary": "This should work with the official LightRAG functions and proper async handling.",
+    "content_length": 80,
+    "created_at": "2025-06-03T03:42:03.672469+00:00",
+    "updated_at": "2025-06-03T03:42:12.636052+00:00",
+    "file_path": "unknown_source"
+  },
+  "doc-be12766422c8b2ba22525f6d4a6ea8b6": {
+    "status": "processed",
+    "chunks_count": 1,
+    "content": "Master writers follow these principles: 1) Show don't tell - use vivid scenes and dialogue instead of exposition. 2) Create compelling characters with clear motivations and flaws. 3) Write with active voice to create energy. 4) Use specific, concrete details rather than vague descriptions. 5) Edit ruthlessly - every word must serve a purpose. 6) Read your work aloud to catch rhythm issues. 7) Start scenes as late as possible and end them early. 8) Use conflict to drive your narrative forward.",
+    "content_summary": "Master writers follow these principles: 1) Show don't tell - use vivid scenes and dialogue instead of exposition. 2) Create compelling characters with clear motivations and flaws. 3) Write with active voice to create energy. 4) Use specific, concrete...",
+    "content_length": 497,
+    "created_at": "2025-06-03T03:45:36.780130+00:00",
+    "updated_at": "2025-06-03T03:46:01.519543+00:00",
+    "file_path": "unknown_source"
+  }
+}

@@ -1,0 +1,1 @@
+This should work with the official LightRAG functions and proper async handling.

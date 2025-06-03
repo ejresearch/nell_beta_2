@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d11" for="edge" attr.name="created_at" attr.type="long" />
+  <key id="d10" for="edge" attr.name="file_path" attr.type="string" />
+  <key id="d9" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d8" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d7" for="edge" attr.name="description" attr.type="string" />
+  <key id="d6" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d5" for="node" attr.name="created_at" attr.type="long" />
+  <key id="d4" for="node" attr.name="file_path" attr.type="string" />
+  <key id="d3" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="description" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_id" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="LightRAG">
+      <data key="d0">LightRAG</data>
+      <data key="d1">organization</data>
+      <data key="d2">LightRAG is an official organization that functions with specific functions and async handling capabilities.</data>
+      <data key="d3">chunk-57b78d087d0843add1a690cb98e9cb60</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922131</data>
+    </node>
+    <node id="async handling">
+      <data key="d0">async handling</data>
+      <data key="d1">category</data>
+      <data key="d2">Async handling refers to techniques used in programming to manage operations that occur independently of the main flow of control, enhancing performance and efficiency in software applications.</data>
+      <data key="d3">chunk-57b78d087d0843add1a690cb98e9cb60</data>
+      <data key="d4">unknown_source</data>
+      <data key="d5">1748922131</data>
+    </node>
+    <edge source="LightRAG" target="async handling">
+      <data key="d6">5.0</data>
+      <data key="d7">LightRAG is associated with official functions that require proper async handling.</data>
+      <data key="d8">organizational function,technical capacity</data>
+      <data key="d9">chunk-57b78d087d0843add1a690cb98e9cb60</data>
+      <data key="d10">unknown_source</data>
+      <data key="d11">1748922131</data>
+    </edge>
+  </graph>
+</graphml>

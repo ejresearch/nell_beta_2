@@ -1,0 +1,10 @@
+{
+  "name": "official_bucket",
+  "project_id": "my_first_project",
+  "active": true,
+  "guidance": "Writing advice",
+  "created_at": "2025-06-02T22:17:54.935889",
+  "last_updated": "2025-06-02T22:22:38.825375",
+  "document_count": 2,
+  "lightrag_status": "initialized"
+}

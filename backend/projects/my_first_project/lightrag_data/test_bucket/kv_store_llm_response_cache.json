@@ -1,0 +1,22 @@
+{
+  "mix": {
+    "33cecaafe8e31a922aa298089502e1d5": {
+      "return": "{\"high_level_keywords\": [\"Writing advice\", \"Good writing\", \"Writing quality\"], \"low_level_keywords\": [\"Clarity\", \"Structure\", \"Grammar\", \"Engagement\", \"Style\", \"Tone\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Writing advice\n\nWhat makes good writing?"
+    },
+    "622f0b2eed7dda302944a5bd7a68a93e": {
+      "return": "{\"high_level_keywords\": [\"Character development\", \"Good writing\", \"Literary techniques\"], \"low_level_keywords\": [\"Character arcs\", \"Dialogue\", \"Plot structure\", \"Conflict\", \"Setting\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Focus on character development\n\nWhat makes good writing?"
+    }
+  }
+}

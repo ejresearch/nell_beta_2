@@ -16,3 +16,4 @@ httpx
 
 # Additional utilities
 python-dateutily
+lightrag

@@ -1,0 +1,67 @@
+{
+  "mix": {
+    "33cecaafe8e31a922aa298089502e1d5": {
+      "return": "{\"high_level_keywords\": [\"Writing advice\", \"Good writing\", \"Writing quality\"], \"low_level_keywords\": [\"Clarity\", \"Structure\", \"Grammar\", \"Engagement\", \"Style\", \"Tone\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Writing advice\n\nWhat makes good writing?"
+    },
+    "622f0b2eed7dda302944a5bd7a68a93e": {
+      "return": "{\"high_level_keywords\": [\"Character development\", \"Good writing\", \"Literary techniques\"], \"low_level_keywords\": [\"Character arcs\", \"Dialogue\", \"Plot structure\", \"Conflict\", \"Setting\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Focus on character development\n\nWhat makes good writing?"
+    },
+    "014b42604b4fe5bd953b709f8a7cdc6a": {
+      "return": "{\"high_level_keywords\": [\"Character development\", \"Writing skills\", \"Literary improvement\"], \"low_level_keywords\": [\"Character arcs\", \"Motivation\", \"Conflict\", \"Dialogue\", \"Narrative techniques\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Focus on character development\n\nHow can I improve my writing skills?"
+    },
+    "db68f7af1b80c3555881f580c2732567": {
+      "return": "{\"high_level_keywords\": [\"Writing skills\", \"Improvement\", \"Writing tips\"], \"low_level_keywords\": [\"Techniques\", \"Practice\", \"Feedback\", \"Grammar\", \"Clarity\", \"Style\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Writing tips\n\nHow can I improve my writing skills?"
+    },
+    "477cf6c53a5885c0fdf0ea7a69d47d69": {
+      "return": "{\"high_level_keywords\": [\"Storytelling\", \"Writing skills\", \"Improvement methods\"], \"low_level_keywords\": [\"Narrative techniques\", \"Character development\", \"Plot structure\", \"Writing exercises\", \"Feedback\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Focus on storytelling\n\nHow can I improve my writing skills?"
+    },
+    "5f4fe358e7687ebc9e853df03228c6a3": {
+      "return": "{\"high_level_keywords\": [\"Writing advice\", \"Writing skills\", \"Improvement\"], \"low_level_keywords\": [\"Techniques\", \"Practice\", \"Feedback\", \"Style\", \"Grammar\", \"Creativity\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Writing advice\n\nHow can I improve my writing skills?"
+    },
+    "2012b78548248f991dd9c1233f85cbda": {
+      "return": "{\"high_level_keywords\": [\"Character development\", \"Writing skills\", \"Creative writing\"], \"low_level_keywords\": [\"Character arcs\", \"Backstory\", \"Dialogue\", \"Motivation\", \"Conflict\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "Character development guide\n\nHow can I improve my writing skills?"
+    }
+  }
+}
