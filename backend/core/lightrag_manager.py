@@ -16,8 +16,13 @@ import numpy as np
 # Import LightRAG with proper error handling
 try:
     from lightrag import LightRAG, QueryParam
-    from lightrag.llm.openai import gpt_4o_mini_complete, openai_embed
+    from lightrag.llm.openai import (
+        gpt_4o_mini_complete,
+        openai_embed,
+        openai_complete_if_cache,
+    )
     from lightrag.kg.shared_storage import initialize_pipeline_status
+    from lightrag.utils import EmbeddingFunc
     LIGHTRAG_AVAILABLE = True
 except ImportError as e:
     print(f"LightRAG import error: {e}")
@@ -83,33 +88,82 @@ class LightRAGManager:
     def _get_bucket_key(self, project_id: str, bucket_name: str) -> str:
         """Get unique key for bucket instance"""
         return f"{project_id}_{bucket_name}"
+
+    async def _create_official_llm_func(self):
+        """Create LLM function using official LightRAG OpenAI integration"""
+        async def llm_model_func(prompt, system_prompt=None, history_messages=[], **kwargs) -> str:
+            return await openai_complete_if_cache(
+                model="gpt-4o-mini",
+                prompt=prompt,
+                system_prompt=system_prompt,
+                history_messages=history_messages,
+                api_key=self.api_key,
+                base_url="https://api.openai.com/v1",
+                **kwargs,
+            )
+
+        return llm_model_func
+
+    async def _create_official_embedding_func(self):
+        """Create embedding function using official LightRAG OpenAI integration"""
+        async def embedding_func(texts: list[str]) -> np.ndarray:
+            return await openai_embed(
+                texts=texts,
+                model="text-embedding-3-small",
+                api_key=self.api_key,
+                base_url="https://api.openai.com/v1",
+            )
+
+        return embedding_func
+
+    async def _get_embedding_dimension(self) -> int:
+        """Get embedding dimension for the current model"""
+        try:
+            embedding_func = await self._create_official_embedding_func()
+            test_text = ["This is a test sentence."]
+            embedding = await embedding_func(test_text)
+            embedding_dim = embedding.shape[1]
+            print(f"🔍 Detected embedding dimension: {embedding_dim}")
+            return embedding_dim
+        except Exception as e:
+            print(f"⚠️ Could not detect embedding dimension, using default 1536: {e}")
+            return 1536
     
     async def _create_lightrag_instance(self, working_dir: str):
-        """Create LightRAG instance using official patterns from documentation"""
+        """Create LightRAG instance using official patterns with OpenAI helpers"""
         if not LIGHTRAG_AVAILABLE:
             raise Exception("LightRAG is not available")
-        
+
         if not self.api_key:
             raise Exception("OpenAI API key is required")
-        
+
         try:
             # Ensure working directory exists
             Path(working_dir).mkdir(parents=True, exist_ok=True)
-            
+
             # Set OpenAI API key for official functions
             os.environ["OPENAI_API_KEY"] = self.api_key
-            
-            # Create LightRAG instance using official pattern from docs
+
+            # Build helper functions
+            llm_model_func = await self._create_official_llm_func()
+            embedding_func = await self._create_official_embedding_func()
+            embedding_dim = await self._get_embedding_dimension()
+
+            # Create LightRAG instance
             instance = LightRAG(
                 working_dir=working_dir,
-                embedding_func=openai_embed,
-                llm_model_func=gpt_4o_mini_complete,
+                llm_model_func=llm_model_func,
+                embedding_func=EmbeddingFunc(
+                    embedding_dim=embedding_dim,
+                    max_token_size=8192,
+                    func=embedding_func,
+                ),
             )
-            
-            # Initialize storages and pipeline status (critical missing steps!)
+
+            # Initialize storages and pipeline status
             await instance.initialize_storages()
             await initialize_pipeline_status()
-            
+
             print(f"✅ LightRAG initialized with official pattern in {working_dir}")
             return instance
             
@@ -419,3 +473,6 @@ class LightRAGManager:
 
 # Global instance
 lightrag_manager = LightRAGManager()
+
+# Backwards compatibility
+BucketManager = LightRAGManager

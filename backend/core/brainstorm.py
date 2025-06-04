@@ -13,7 +13,7 @@ from .models import (
     BrainstormRequest, BrainstormResponse, BrainstormSummary
 )
 from .project_manager import ProjectManager
-from .lightrag_client import BucketManager
+from .lightrag_manager import BucketManager
 
 # =============================================================================
 # BRAINSTORM MODULE CLASS
