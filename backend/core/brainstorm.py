@@ -13,7 +13,7 @@ from .models import (
     BrainstormRequest, BrainstormResponse, BrainstormSummary
 )
 from .project_manager import ProjectManager
-from .lightrag_manager import BucketManager
+from .lightrag_manager import LightRAGManager
 
 # =============================================================================
 # BRAINSTORM MODULE CLASS
@@ -25,7 +25,7 @@ class BrainstormModule:
     Direct port of your brainstorm.py workflow
     """
     
-    def __init__(self, project_manager: ProjectManager, bucket_manager: BucketManager):
+    def __init__(self, project_manager: ProjectManager, bucket_manager: LightRAGManager):
         self.project_manager = project_manager
         self.bucket_manager = bucket_manager
         
@@ -161,7 +161,8 @@ class BrainstormModule:
         # Get bucket guidance
         bucket_guidance = []
         for bucket_name in selected_buckets:
-            guidance = await self.bucket_manager.get_client(request.project_id).get_bucket_guidance(bucket_name)
+            bucket_info = await self.bucket_manager.get_bucket(request.project_id, bucket_name)
+            guidance = bucket_info.guidance if bucket_info else None
             if guidance:
                 bucket_guidance.append(f"{bucket_name}: {guidance}")
         
@@ -380,7 +381,7 @@ class BrainstormModule:
 # This will be injected with dependencies in the API layer
 brainstorm_module = None
 
-def get_brainstorm_module(project_manager: ProjectManager, bucket_manager: BucketManager) -> BrainstormModule:
+def get_brainstorm_module(project_manager: ProjectManager, bucket_manager: LightRAGManager) -> BrainstormModule:
     """Dependency injection for brainstorm module"""
     global brainstorm_module
     if brainstorm_module is None:
