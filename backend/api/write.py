@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core.models import WriteRequest, WriteResponse, WriteSummary
 from core.project_manager import project_manager
-from core.lightrag_client import lightrag_manager
+from core.lightrag_manager import lightrag_manager
 from core.brainstorm import get_brainstorm_module
 from core.write import WriteModule, get_write_module
 
