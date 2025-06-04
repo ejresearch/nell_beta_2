@@ -13,7 +13,7 @@ from .models import (
     BrainstormRequest, BrainstormResponse, BrainstormSummary
 )
 from .project_manager import ProjectManager
-from .lightrag_client import BucketManager
+from .lightrag_manager import LightRAGManager, BucketQueryRequest
 
 # =============================================================================
 # BRAINSTORM MODULE CLASS
@@ -25,7 +25,7 @@ class BrainstormModule:
     Direct port of your brainstorm.py workflow
     """
     
-    def __init__(self, project_manager: ProjectManager, bucket_manager: BucketManager):
+    def __init__(self, project_manager: ProjectManager, bucket_manager: LightRAGManager):
         self.project_manager = project_manager
         self.bucket_manager = bucket_manager
         
@@ -67,13 +67,15 @@ class BrainstormModule:
             request.selected_buckets
         )
         
-        # Query LightRAG buckets (your multi-bucket querying pattern)
-        bucket_results = await self.bucket_manager.query_with_context(
+        # Query LightRAG buckets using the manager
+        query_request = BucketQueryRequest(query=brainstorm_prompt)
+        query_response = await self.bucket_manager.query_buckets(
             request.project_id,
-            request.selected_buckets,
-            brainstorm_prompt,
-            source_context
+            query_request
         )
+        bucket_results = {
+            name: info["content"] for name, info in query_response.get("results", {}).items()
+        }
         
         # Generate final brainstorm content
         final_content = await self._synthesize_brainstorm_results(
@@ -161,9 +163,9 @@ class BrainstormModule:
         # Get bucket guidance
         bucket_guidance = []
         for bucket_name in selected_buckets:
-            guidance = await self.bucket_manager.get_client(request.project_id).get_bucket_guidance(bucket_name)
-            if guidance:
-                bucket_guidance.append(f"{bucket_name}: {guidance}")
+            bucket = await self.bucket_manager.get_bucket(request.project_id, bucket_name)
+            if bucket and bucket.guidance:
+                bucket_guidance.append(f"{bucket_name}: {bucket.guidance}")
         
         # Build context from source rows
         context_text = self._format_source_context(source_context)
@@ -380,7 +382,7 @@ class BrainstormModule:
 # This will be injected with dependencies in the API layer
 brainstorm_module = None
 
-def get_brainstorm_module(project_manager: ProjectManager, bucket_manager: BucketManager) -> BrainstormModule:
+def get_brainstorm_module(project_manager: ProjectManager, bucket_manager: LightRAGManager) -> BrainstormModule:
     """Dependency injection for brainstorm module"""
     global brainstorm_module
     if brainstorm_module is None:
