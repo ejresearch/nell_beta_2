@@ -1,0 +1,13 @@
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Virtual environments
+backend/venv/
+
+# Node modules
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+
