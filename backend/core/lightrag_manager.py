@@ -409,6 +409,46 @@ class LightRAGManager:
             "results": results,
             "combined_result": combined_result
         }
+
+    async def get_bucket_guidance(self, project_id: str, bucket_name: str) -> Optional[str]:
+        """Return guidance text for a bucket if available"""
+        bucket = await self.get_bucket(project_id, bucket_name)
+        return bucket.guidance if bucket else None
+
+    async def query_bucket(self, project_id: str, bucket_name: str, query: str, mode: str = "mix") -> str:
+        """Query a single bucket and return the raw result"""
+        bucket = await self.get_bucket(project_id, bucket_name)
+        if not bucket:
+            raise ValueError(f"Bucket '{bucket_name}' not found")
+
+        bucket_key = self._get_bucket_key(project_id, bucket_name)
+        if bucket_key not in self._lightrag_instances:
+            self._lightrag_instances[bucket_key] = await self._create_lightrag_instance(bucket.working_dir)
+
+        lightrag_instance = self._lightrag_instances[bucket_key]
+
+        enhanced_query = query
+        if bucket.guidance:
+            enhanced_query = f"{bucket.guidance}\n\n{query}"
+
+        return await lightrag_instance.aquery(enhanced_query, param=QueryParam(mode=mode))
+
+    async def query_with_context(
+        self,
+        project_id: str,
+        bucket_names: List[str],
+        prompt: str,
+        context: Dict[str, Any],
+        mode: str = "mix",
+    ) -> Dict[str, str]:
+        """Query multiple buckets using the given prompt and return a simple mapping"""
+        results: Dict[str, str] = {}
+        for name in bucket_names:
+            try:
+                results[name] = await self.query_bucket(project_id, name, prompt, mode=mode)
+            except Exception as e:
+                results[name] = f"Error querying bucket: {e}"
+        return results
     
     async def toggle_bucket(self, project_id: str, bucket_name: str, active: bool) -> BucketInfo:
         """Toggle a bucket's active status"""

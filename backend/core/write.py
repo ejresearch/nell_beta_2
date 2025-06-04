@@ -13,7 +13,7 @@ from .models import (
     WriteRequest, WriteResponse, WriteEdit, WriteSummary
 )
 from .project_manager import ProjectManager
-from .lightrag_manager import BucketManager
+from .lightrag_manager import LightRAGManager
 from .brainstorm import BrainstormModule
 
 # =============================================================================
@@ -28,8 +28,8 @@ class WriteModule:
     
     def __init__(
         self, 
-        project_manager: ProjectManager, 
-        bucket_manager: BucketManager,
+        project_manager: ProjectManager,
+        bucket_manager: LightRAGManager,
         brainstorm_module: BrainstormModule
     ):
         self.project_manager = project_manager
@@ -278,9 +278,7 @@ class WriteModule:
         Like your final content generation in write.py
         """
         try:
-            # Use bucket manager's LLM integration for generation
-            # This leverages the same LightRAG LLM setup used for bucket queries
-            client = self.bucket_manager.get_client(project_id)
+            # Use LightRAG's LLM integration for generation
             
             # For now, we'll use a simple approach - in a full implementation,
             # you'd want to integrate with your preferred LLM API directly
@@ -502,8 +500,8 @@ Please revise the original content according to the edit instructions while main
 write_module = None
 
 def get_write_module(
-    project_manager: ProjectManager, 
-    bucket_manager: BucketManager,
+    project_manager: ProjectManager,
+    bucket_manager: LightRAGManager,
     brainstorm_module: BrainstormModule
 ) -> WriteModule:
     """Dependency injection for write module"""
