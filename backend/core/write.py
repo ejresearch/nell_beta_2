@@ -13,7 +13,7 @@ from .models import (
     WriteRequest, WriteResponse, WriteEdit, WriteSummary
 )
 from .project_manager import ProjectManager
-from .lightrag_client import BucketManager
+from .lightrag_manager import LightRAGManager
 from .brainstorm import BrainstormModule
 
 # =============================================================================
@@ -29,7 +29,7 @@ class WriteModule:
     def __init__(
         self, 
         project_manager: ProjectManager, 
-        bucket_manager: BucketManager,
+        bucket_manager: LightRAGManager,
         brainstorm_module: BrainstormModule
     ):
         self.project_manager = project_manager
@@ -503,7 +503,7 @@ write_module = None
 
 def get_write_module(
     project_manager: ProjectManager, 
-    bucket_manager: BucketManager,
+    bucket_manager: LightRAGManager,
     brainstorm_module: BrainstormModule
 ) -> WriteModule:
     """Dependency injection for write module"""
