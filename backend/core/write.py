@@ -13,7 +13,7 @@ from .models import (
     WriteRequest, WriteResponse, WriteEdit, WriteSummary
 )
 from .project_manager import ProjectManager
-from .lightrag_client import BucketManager
+from .lightrag_manager import BucketManager
 from .brainstorm import BrainstormModule
 
 # =============================================================================
