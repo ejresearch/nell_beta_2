@@ -33,9 +33,13 @@ def health_check():
 # Include API routers
 from api.projects import router as projects_router
 from api.buckets import router as buckets_router
+from api.brainstorm import router as brainstorm_router
+from api.write import router as write_router
 
 app.include_router(projects_router)
 app.include_router(buckets_router)
+app.include_router(brainstorm_router)
+app.include_router(write_router)
 
 if __name__ == "__main__":
     import uvicorn
