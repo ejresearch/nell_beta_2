@@ -15,5 +15,4 @@ python-multipart
 httpx
 
 # Additional utilities
-python-dateutily
-lightrag
+python-dateutil
